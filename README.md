@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# 🌟 MedSafety — Opioid Medication Overdose Risk Prediction  
+### 🧠 AI-powered Clinical Decision Support System  
+### 🔥 FastAPI + Machine Learning + React + Firebase
 
-## Project info
+MedSafety is an intelligent medication-safety assistant that evaluates **opioid overdose risk** based on a patient’s medications, lifestyle factors, and clinical history.  
+It uses a trained **Machine Learning model**, calculates **Daily MME**, visualizes risks, and provides **safety recommendations and monitoring guidelines**.
 
-**URL**: https://lovable.dev/projects/d0fe2b7b-581e-4622-b8f4-f24cb8d707f4
+This full-stack project includes:
 
-## How can I edit this code?
+- ⚡ FastAPI backend with an ML model  
+- 🧠 Python Logistic Regression model  
+- 🎨 Beautiful React + TypeScript UI  
+- ⛅ Firebase Authentication + Firestore database  
+- 🎛️ Dynamic charts (Recharts)  
+- 🌙 Full dark/light mode  
+- 📌 Pinned analyses, history system, delete records  
+- 💾 Save analysis directly from results page  
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+<br>
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d0fe2b7b-581e-4622-b8f4-f24cb8d707f4) and start prompting.
+<div align="center">
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎥 **UI Preview (Add screenshots here later)**  
+📊 Dashboard • 📈 Risk Charts • 💊 Form • 🗂️ History • ⚙️ Settings
 
-**Use your preferred IDE**
+</div>
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# 🚀 Features
 
-Follow these steps:
+## 🧠 **Machine Learning-Based Risk Prediction**
+- Logistic Regression model trained on clinical opioid risk indicators  
+- Predicts overdose probability (0–100%)  
+- Calculates **total daily MME** using opioid potency factors  
+- Handles multiple medications  
+- Dynamic contribution charts
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 💊 **Smart Medication Entry & MME Calculator**
+- Add/remove medications  
+- Prevents duplicates  
+- Computes MME instantly  
+- Auto-fills patient age & gender from profile  
+- Back-button restores previous values  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🧾 **Professional Analysis Results**
+- Combined “Risk & Medication Analysis” card  
+- Side-by-side layout: risk score + charts  
+- Pie chart (Safe vs Risk %)  
+- Medication-specific MME contribution bar-chart  
+- Risk interpretation alert  
+- Clinical monitoring guidance  
+- Practical safety tips + recommendations (dual-card layout)  
+- **Clean Save button** (stores analysis to Firestore)
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📚 **History Page (Fully Interactive)**
+- Displays all saved analyses  
+- Pinned analyses with dedicated toggle  
+- Delete record (Trash-2 icon + confirmation popover)  
+- **Right-side details panel stays fixed** (only left list scrolls)  
+- Click any record to view risk charts, medications & total MME  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 👤 **User Profile**
+- Stores patient age, gender, height, weight  
+- Auto-fills required form fields  
+- Editable anytime  
 
-**Edit a file directly in GitHub**
+## ⚙️ **Settings**
+- Dark mode toggle (stored in localStorage)  
+- Real-time toast message (“Dark mode activated”)  
+- Notification toggle  
+- Quick view of pinned analyses  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌑 **Theme System**
+- Fully synced dark/light UI  
+- LocalStorage persistence  
+- Smooth transition  
+- Clean gradient & soft color system  
 
-**Use GitHub Codespaces**
+## 🔐 **Secure Data Handling**
+- Firebase Authentication  
+- Firestore database with user-specific data  
+- Document IDs used for delete/update operations  
+- CORS-protected FastAPI backend  
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+# 🏗️ System Architecture
 
-This project is built with:
+                 ┌───────────────────────────┐
+                 │     React Frontend        │
+                 │  (TS + Tailwind + UI)     │
+                 └───────────┬───────────────┘
+                             │  Axios (JSON)
+                             ▼
+                  ┌────────────────────────┐
+                  │     FastAPI Backend    │
+                  │ • Predict overdose     │
+                  │ • Calculate MME        │
+                  │ • Save/Delete history  │
+                  └───────────┬────────────┘
+                              │
+                 ┌────────────────────────────┐
+                 │      Firebase Firestore    │
+                 │  users / analyses records  │
+                 └────────────────────────────┘
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/d0fe2b7b-581e-4622-b8f4-f24cb8d707f4) and click on Share -> Publish.
+# 🤖 Machine Learning Model
 
-## Can I connect a custom domain to my Lovable project?
+### 📌 Model Used
+- Logistic Regression (scikit-learn)  
+- StandardScaler for feature normalization  
+- Trained on 20+ opioid-related clinical features  
 
-Yes, you can!
+### 📥 Input Features
+- Age, gender  
+- Medical conditions (respiratory, liver, mental health…)  
+- Concurrency (benzos, sedatives, antidepressants)  
+- Daily opioid dosage  
+- Daily MME  
+- Primary opioid & potency factor  
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### 📤 Output
+```json
+{
+  "prediction": 1,
+  "risk_probability": 0.78
+}
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
