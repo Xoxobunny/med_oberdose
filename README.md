@@ -131,4 +131,188 @@ This full-stack project includes:
   "prediction": 1,
   "risk_probability": 0.78
 }
+```
+---
+# 🧰 Tech Stack
+
+## 🌐 Frontend
+- ⚛️ **React + TypeScript**
+- 🎨 **TailwindCSS**
+- 🧩 **shadcn/ui components**
+- 📡 **Axios** (API communication)
+- 📊 **Recharts** (interactive charts)
+- 💡 **LocalStorage** (theme & state persistence)
+
+## 🔧 Backend
+- 🚀 **FastAPI**
+- 🐍 **Python 3**
+- 🧠 **scikit-learn** (Logistic Regression model)
+- 📦 **joblib** (model + scaler loading)
+- 🔐 **Firebase Admin SDK**
+- 🔁 **CORS Middleware**
+
+## ☁️ Cloud & Database
+- 🔥 **Firebase Authentication**
+- 🗂️ **Firestore Database**
+- 📁 **Firebase Storage** (optional file handling)
+
+## 🛠️ Dev Tools
+- 🧪 **Uvicorn** (FastAPI server)
+- 📁 **Virtual Environment (.venv)**
+- 🛠️ **Node.js + npm**
+- 📝 **ESLint + Prettier** (optional formatting)
+
+---
+# ✨ Features
+
+## 🧠 Machine Learning Risk Prediction
+- Logistic Regression model
+- Predicts overdose probability (0–100%)
+- Calculates **Daily MME**
+- Handles multiple medications
+- Visual risk interpretation + charts
+
+## 💊 Smart Medication Handling
+- Add/remove medications
+- Duplicate-prevention logic
+- Auto MME calculation
+- Auto-fill patient age & gender
+- Back-button restores previous entries
+
+## 📊 Professional Analysis Output
+- Combined **Risk + Medication Analysis** card
+- Pie Chart (Safe vs Risk %)
+- Bar Chart (MME contribution per medication)
+- Monitoring guidelines + safety tips
+- One-click **Save Analysis** to Firestore
+
+## 📚 History Management
+- View all saved analyses
+- Pin/unpin important records
+- Delete with confirmation popover
+- Fixed details panel on the right
+- Scrollable list on the left
+
+## 👤 User Profile
+- Stores age, gender, height, weight
+- Auto-fills form
+- Editable anytime
+
+## ⚙️ Settings
+- Dark/Light mode toggle
+- LocalStorage-based theme saving
+- Toast notifications
+- Quick view of pinned analyses
+
+## 🔐 Secure Backend
+- Firebase Authentication
+- Firestore user-specific documents
+- CORS-protected FastAPI server
+
+## 🌗 Theme System
+- Smooth dark/light transitions
+- Gradient-based UI design
+- Persistent theme storage
+
+---
+# 🛠️ Installation & Setup
+
+## 📥 Clone Repository
+```bash
+git clone https://github.com/Vinay-sp-2004/Opioid_med_overdose
+cd Opioid_med_overdose
+```
+
+---
+
+# 🔧 Backend Setup (FastAPI)
+
+## 🐍 Create Virtual Environment
+```bash
+python -m venv .venv
+```
+
+### ▶️ Activate Environment
+**Windows**
+```bash
+.venv\Scripts\activate
+```
+
+**Linux / Mac**
+```bash
+source .venv/bin/activate
+```
+
+## 📦 Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## ▶️ Run Server
+```bash
+uvicorn main:app --reload
+```
+
+FastAPI will be available at:
+- http://127.0.0.1:8000/docs  
+- http://127.0.0.1:8000/redoc
+
+---
+
+# 🌐 Frontend Setup (React + TypeScript)
+
+## 📦 Install Node Dependencies
+```bash
+cd frontend
+npm install
+```
+
+## ▶️ Start Frontend Dev Server
+```bash
+npm run dev
+```
+
+App opens at:
+- http://localhost:5173/
+
+---
+
+# 🔑 Environment Variables
+
+## Backend `.env`
+```
+FIREBASE_TYPE=service_account
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_PRIVATE_KEY=your_private_key
+FIREBASE_CLIENT_EMAIL=your_email
+```
+
+## Frontend `.env`
+```
+VITE_FIREBASE_API_KEY=xxxx
+VITE_FIREBASE_AUTH_DOMAIN=xxxx
+VITE_FIREBASE_PROJECT_ID=xxxx
+```
+---
+# 👨‍💻 About the Author
+
+Hi! I’m **Vinay S P**, a Computer Science student passionate about  
+**AI, Machine Learning, Full-Stack Development, and Intelligent Healthcare Systems**.
+
+I love building projects that blend clean UI, strong engineering, and real-world impact.  
+If you're interested in collaborating, improving this project, or just discussing ideas — feel free to connect!
+
+📫 **Reach me on GitHub:**  
+👉 [Vinay-sp-2004](https://github.com/Vinay-sp-2004)
+
+If you found this project helpful, inspiring, or worth learning from:
+
+### 👉 **Please give it a ⭐ on GitHub!**  
+It motivates future updates, improvements, and new features.
+
+<div align="center">
+  
+❤️ **Your star helps this project grow!** ⭐
+
+</div>
 
